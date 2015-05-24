@@ -7,6 +7,7 @@ SITENAME = 'argpar.se'
 SITEURL = ''
 SLUGIFY_SOURCE = 'title'
 IGNORE_FILES = ['template.md']
+THEME = 'pelican-sundown'
 
 PATH = 'content'
 
@@ -25,8 +26,8 @@ AUTHOR_FEED_RSS = None
 
 
 # URL structure on site
-ARTICLE_URL = 'posts/{category}/{slug}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{slug}.html'
+ARTICLE_URL = 'posts/{category}/{slug}'
+ARTICLE_SAVE_AS = 'posts/{category}/{slug}.html'
 
 DRAFT_URL = 'drafts/{slug}'
 DRAFT_SAVE_AS = ''
