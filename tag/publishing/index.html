@@ -1,76 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>argpar.se - publishing</title>
-        <link rel="stylesheet" href="http://www.argpar.se/theme/css/main.css" />
-        <link href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="argpar.se Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>argpar.se - publishingargpar.se</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://www.argpar.se/">argpar.se </a></h1>
-                <nav><ul>
-                    <li><a href="http://www.argpar.se/category/misc">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://www.argpar.se/posts/misc/hello-world">Hello World</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2015-05-17T16:00:00+01:00">
-                Published: Sun 17 May 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://www.argpar.se/author/jonathan-sundqvist">Jonathan Sundqvist</a>
-        </address>
-<p>In <a href="http://www.argpar.se/category/misc">misc</a>. </p>
-<p>tags: <a href="http://www.argpar.se/tag/pelican">pelican</a> <a href="http://www.argpar.se/tag/publishing">publishing</a> </p>
-</footer><!-- /.post-info --><p>The essence of a hello world post. Just trying things out. </p><p>There are <a href="http://www.argpar.se/posts/misc/hello-world#disqus_thread">comments</a>.</p>                </article>
-<p class="paginator">
-    Page 1 / 1
+    <link rel="stylesheet" href="http://www.argpar.se/theme/css/main.css">
+    <link rel="stylesheet" href="http://www.argpar.se/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="" class="grv-img"/></div>
+        <h1 class="title"><a href="http://www.argpar.se/">argpar.se </a></div>
+        <div class="sub-title"></div>
+        <aside role="complementary">
+<p>
+  <div class="view"><a href="http://www.argpar.se/archives.html">Archives</a></div>
 </p>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+<!-- Social links -->
+        </aside>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+      </header>
+      <section>
+    <article>
+      <h1 class="front-title"><a href="http://www.argpar.se/posts/misc/hello-world">Hello World</a></h1>
+<p>
+<small>
+<abbr class="published" title="2015-05-17T16:00:00+01:00">
+  Sun 17 May 2015
+</abbr> | 
+  tags: 
+    <a href="http://www.argpar.se/tag/pelican">pelican</a>, 
+    <a href="http://www.argpar.se/tag/publishing">publishing</a>, 
+ -- (<a href="http://www.argpar.se/posts/misc/hello-world" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>Trying out pelican</p>
+      <div class="read-more"><a href="http://www.argpar.se/posts/misc/hello-world">read more...</a></div>
+      <hr />
+    </article>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+      </section>
+      <footer>
+        <p><small>&copy; argpar.se &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
 
-<script type="text/javascript">
-    var disqus_shortname = 'argparse';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-</body>
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
+
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
