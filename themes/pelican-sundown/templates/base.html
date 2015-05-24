@@ -16,10 +16,11 @@
     <div class="wrapper">
       <header>
         <div><img src="{{ GRV_URL }}" class="grv-img"/></div>
-        <div class="title"><a href="{{ SITEURL }}/">{{ SITENAME }} </a></div>
+        <h1 class="title"><a href="{{ SITEURL }}/">{{ SITENAME }} </a></div>
         <div class="sub-title">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
-
-        {% include 'sidebar.html' %}
+        <aside role="complementary">
+          {% include 'sidebar.html' %}
+        </aside>
 
       </header>
       <section>
@@ -35,14 +36,14 @@
     <script>
       var metas = document.getElementsByTagName('meta');
       var i;
-      
+
       if (navigator.userAgent.match(/iPhone/i)) {
         for (i=0; i<metas.length; i++) {
           if (metas[i].name == "viewport") {
             metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
           }
         }
-      
+
         document.addEventListener("gesturestart", gestureStart, false);
       }
 
