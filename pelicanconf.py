@@ -71,6 +71,10 @@ TWITTER_USERNAME = 'argparse'
 
 
 # Pagination and stuff
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
+DEFAULT_LANG = 'en'
 DEFAULT_CATEGORY = 'misc'
 DEFAULT_PAGINATION = 10
 DEFAULT_ORPHANS = 1
