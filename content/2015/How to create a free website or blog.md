@@ -1,10 +1,10 @@
 Title: How to create a free website or blog
-Date: 2015-06-10 16:00
+Date: 2015-06-07 21:00
 Category: tutorial
 Tags: blog, pelican, web development
 Authors: Jonathan Sundqvist
-Summary: To be decided.
-Status: draft
+Summary: Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.  
+Status: published
 
 ![Pelican]({filename}/images/pelican.jpg)
 
