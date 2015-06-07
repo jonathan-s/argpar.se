@@ -1,10 +1,10 @@
 Title: How to create a free website or blog
-Date: 2015-06-07 21:00
+Date: 2015-06-07 20:00
 Category: tutorial
 Tags: blog, pelican, web development
 Authors: Jonathan Sundqvist
-Summary: Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.  
-Status: published
+MetaDescription: Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.   
+Summary: There are many options out there if you want to create your own website. But if you want customizability and still come away on the cheap the options shrink considerably. However if you create your website with something called a static site generator you'll be able to achieve exactly this. The only thing that you'll have to pay for in the end is the domain.
 
 ![Pelican]({filename}/images/pelican.jpg)
 
@@ -92,7 +92,7 @@ save_as: thispath/about-me/index.html
 
 In fact once you've created these two pages. You can view what your website looks like locally. If you type in `make devserver` into the terminal. It will start to generate the website for you. Once that's done you can try to visit your website at the following address [http://localhost:8000](http://localhost:8000). That's what it will look like. Perhaps you want it to look differently? Then continue to read on and we will make those changes as well.  
 
-## How to manage website settings
+## How to manage pelican's website settings
 
 Now that you've installed pelican and run the command `pelican-quickstart` there are already two files used as settings in the folder for your website; `pelicanconf.py` and `publishconf.py`. This is where all the settings are stored. To quickly get up to speed I would suggest that you copy the settings that aren't the same from [my github repository](https://github.com/jonathan-s/argpar.se/). That way you can customize the settings more quickly. 
 
