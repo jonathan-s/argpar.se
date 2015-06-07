@@ -8,13 +8,14 @@ SITEURL = ''
 SLUGIFY_SOURCE = 'title'
 IGNORE_FILES = ['template.md']
 THEME = 'pelican-sundown'
+WITH_FUTURE_DATES = False
+LOAD_CONTENT_CACHE = False        # if you are developing a theme turn these off.
+AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off.
 
 PATH = 'content'
 
 TIMEZONE = 'Europe/London'
 
-DEFAULT_LANG = 'en'
-WITH_FUTURE_DATES = True
 DISPLAY_PAGES_ON_MENU = True
 
 # Feed generation is usually not desired when developing
@@ -27,16 +28,15 @@ AUTHOR_FEED_RSS = None
 
 # URL structure on site
 ARTICLE_URL = 'posts/{category}/{slug}'
-ARTICLE_SAVE_AS = 'posts/{category}/{slug}.html'
+ARTICLE_SAVE_AS = 'posts/{category}/{slug}/index.html'
 
 DRAFT_URL = 'drafts/{slug}'
-DRAFT_SAVE_AS = ''
 
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 AUTHOR_URL = 'author/{slug}'
-# won't be generated
+# authors won't be generated
 AUTHOR_SAVE_AS = ''
 
 CATEGORY_URL = 'category/{slug}'
@@ -71,9 +71,7 @@ TWITTER_USERNAME = 'argparse'
 
 
 # Pagination and stuff
-DEFAULT_METADATA = {
-    'status': 'draft',
-}
+
 DEFAULT_LANG = 'en'
 DEFAULT_CATEGORY = 'misc'
 DEFAULT_PAGINATION = 10
