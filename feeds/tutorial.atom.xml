@@ -62,7 +62,7 @@ ghp-import
 
 
 &lt;p&gt;In fact once you've created these two pages. You can view what your website looks like locally. If you type in &lt;code&gt;make devserver&lt;/code&gt; into the terminal. It will start to generate the website for you. Once that's done you can try to visit your website at the following address &lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;. That's what it will look like. Perhaps you want it to look differently? Then continue to read on and we will make those changes as well.  &lt;/p&gt;
-&lt;h2&gt;How to manage website settings&lt;/h2&gt;
+&lt;h2&gt;How to manage pelican's website settings&lt;/h2&gt;
 &lt;p&gt;Now that you've installed pelican and run the command &lt;code&gt;pelican-quickstart&lt;/code&gt; there are already two files used as settings in the folder for your website; &lt;code&gt;pelicanconf.py&lt;/code&gt; and &lt;code&gt;publishconf.py&lt;/code&gt;. This is where all the settings are stored. To quickly get up to speed I would suggest that you copy the settings that aren't the same from &lt;a href="https://github.com/jonathan-s/argpar.se/"&gt;my github repository&lt;/a&gt;. That way you can customize the settings more quickly. &lt;/p&gt;
 &lt;p&gt;Now that you've copied the settings. Let's take a closer look at what some of them do. &lt;code&gt;pelicanconf.py&lt;/code&gt; is where you set the base settings. Any settings that needs to be different when publishing should be set in &lt;code&gt;publishconf.py&lt;/code&gt;. It   &lt;/p&gt;
 &lt;ul&gt;
