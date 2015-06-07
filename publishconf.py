@@ -26,4 +26,4 @@ DRAFT_SAVE_AS = ''
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "argparse"
-# GOOGLE_ANALYTICS = "UA-9947703-3"
+GOOGLE_ANALYTICS = "UA-9947703-3"
