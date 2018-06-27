@@ -2,17 +2,26 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+
+def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
+    return value.strftime(format)
+
+
 AUTHOR = 'Jonathan Sundqvist'
 SITENAME = 'argpar.se'
 SITEURL = ''
 SLUGIFY_SOURCE = 'title'
 IGNORE_FILES = ['template.md']
-THEME = 'pelican-sundown'
+THEME = 'simple-a'
 WITH_FUTURE_DATES = False
 LOAD_CONTENT_CACHE = False        # if you are developing a theme turn these off.
 AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off.
-
+JINJA_FILTERS = {
+    'datetimeformat': datetimeformat
+}
 PATH = 'content'
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['post_stats']
 
 TIMEZONE = 'Europe/London'
 
