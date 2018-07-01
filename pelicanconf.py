@@ -3,10 +3,6 @@
 from __future__ import unicode_literals
 
 
-def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
-    return value.strftime(format)
-
-
 AUTHOR = 'Jonathan Sundqvist'
 SITENAME = 'argpar.se'
 SITEURL = ''
@@ -16,16 +12,12 @@ THEME = 'simple-a'
 WITH_FUTURE_DATES = False
 LOAD_CONTENT_CACHE = False        # if you are developing a theme turn these off.
 AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off.
-JINJA_FILTERS = {
-    'datetimeformat': datetimeformat
-}
+
 PATH = 'content'
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['post_stats']
 
 TIMEZONE = 'Europe/London'
-
-DISPLAY_PAGES_ON_MENU = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -33,7 +25,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
 
 # URL structure on site
 ARTICLE_URL = 'posts/{category}/{slug}'
@@ -44,13 +35,14 @@ DRAFT_URL = 'drafts/{slug}'
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
 
+# authors won't be generated as it uses '' for save_as
 AUTHOR_URL = 'author/{slug}'
-# authors won't be generated
 AUTHOR_SAVE_AS = ''
 
 CATEGORY_URL = 'category/{slug}'
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
+SITEMAP_SAVE_AS = 'sitemap.xml'
 STATIC_PATHS = [
     'images',
     'extra/robots.txt',
@@ -66,21 +58,7 @@ EXTRA_PATH_METADATA = {
     'content/pages/404.md': {'path': '404.html'}  # not sure this will work
 }
 
-SITEMAP_SAVE_AS = 'sitemap.xml'
-
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'))
-
-# Social widget
-# SOCIAL = (('You can add links in your config file', '#'),
-#           ('Another social link', '#'),)
-TWITTER_USERNAME = 'argparse'
-
-
 # Pagination and stuff
-
 DEFAULT_LANG = 'en'
 DEFAULT_CATEGORY = 'misc'
 DEFAULT_PAGINATION = 10
@@ -94,3 +72,17 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+
+# ########## THEME RELATED ############
+
+
+def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
+    return value.strftime(format)
+
+
+JINJA_FILTERS = {
+    'datetimeformat': datetimeformat
+}
+TWITTER_USERNAME = 'argparse'
+EMAIL = 'jonathan@argpar.se'
