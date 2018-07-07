@@ -25,7 +25,7 @@ Once you're logged in you can click on "Domains" and then continue to click on t
 
 In the menu to the left you can select "Email", it'll then show you the screen you see above. Clicking on creating a gandi mail will let you create a new email address for yourself. The password will be used for logging into the [webmail](gandimail) that gandi has or for connecting the email to an email client such as Thunderbird.
 
-Alias means that these combinations also goes to the email that you're registering. In other words, if you create the email email@world.com and you put the alias, "hello" and "test" as alias. The emails email@world.com, hello@world.com and test@world.com will all be valid.
+Alias means that these combinations also goes to the email that you're registering. In other words, if you create the email email@world.com and you put the alias, "hello" and "test" as alias. The emails "email@world.com", "hello@world.com" and "test@world.com" will all be valid.
 
 You're probably already using some other email. So if you want to continue doing that for a while you can forward the email from your new address to your old email address. Make sure that you also forward email to the address that you just created. Otherwise it'll skip the gandi inbox completely, the goal is to keep your email there after all.
 
