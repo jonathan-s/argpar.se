@@ -1,10 +1,9 @@
 Title: Getting an email with your own domain
-Date: 2018-05-17 16:00
+Date: 2018-07-04 23:27
 Category: misc
 Tags: tutorial, email
 Authors: Jonathan Sundqvist
-Summary: Trying out pelican
-Status: draft
+Status: published
 
 There are many compelling reasons to have an email address with your own domain. My personal motivation is that you become a lot more independant from the tech giants. I've been using gmail for many years and stories  where google has [completely](goog1) [locked](goog2) [down](goog3) their google account are particularly frightening.
 
@@ -22,7 +21,7 @@ So once you've decided what domain you want and completed the checkout process a
 
 Once you're logged in you can click on "Domains" and then continue to click on the domain that you registered. Here you can see that automatic renewal is on by default. You'll definitely want that otherwise your email address would stop working after a year which is no good.
 
-![Create your email at gandi]({filename}/images/create-email-address.png)
+![Create your email at gandi]({filename}/images/your-own-email/create-email-address.png)
 
 In the menu to the left you can select "Email", it'll then show you the screen you see above. Clicking on creating a gandi mail will let you create a new email address for yourself. The password will be used for logging into the [webmail](gandimail) that gandi has or for connecting the email to an email client such as Thunderbird.
 
@@ -36,14 +35,25 @@ Congrats! You now have your own domain with an email that you can use! Go forth 
 
 ### SPF records or spam prevention
 
-There are a couple of more things that you can do. Right now if you try to send an email to a gmail user it'll look something like this.
+There are a couple of more things that you can do. Right now if you try to send an email to a gmail user, it'll look somewhat suspicious, as in in Gmail warns the user it can't verify whether the email was sent by you or someone else.
 
-... setting up SPF records.
+That's because gmail can't really tell right now whether the person who sent this is the person who actually owns the email address. You can remedy this by creating something called a [SPF record](spfwiki). In short, it's as an email validation policy which is designed to detect and block spoofing. It will prevent spammers form using your domain to send unauthorized emails.
 
-That's because gmail can't really tell right now whether the person who sent this is the person who actually owns the email address. You can remedy this with creating something called a [SPF record](spfwiki).
+The [SPF record](spfgandi) for gandi.net looks like this:
 
-// Something about preventing spamming etc.
-// Continue on how this can be set up
+```
+ @ 10800 IN TXT "v=spf1 include:_mailcust.gandi.net ~all"
+```
+
+To activate the SPF record. Go to `DNS Records` which you can find among the options for your particular domain. Once there add a new record. You'll arrive to a form where you can set things up. The type should be TXT. The rest of the options should be filled in like this to generate the SPF record above.
+
+```
+TTL: 10800 (seconds)
+Name: @
+Text value: v=spf1 include:_mailcust.gandi.net ~all
+```
+
+If you scroll down you can view all the DNS records, and you'll find that it looks like the SPF record in the stated above.
 
 
 ## Use your new email with Gmail
@@ -64,6 +74,7 @@ Once that is done gmail will send an email to that address to verify that it is 
 
 Then there is also the option of doing the opposite, forwarding email from your gmail account to your new email. Which perhaps is a better option in case you're trying to wean yourself off gmail.
 
+Happy emailing, and send me an email if there is anything that I should clarify :)
 
 [goog1]: https://twitter.com/search?q=google%2Baccount%2Bdisabled&src=typd
 [goog2]: https://news.ycombinator.com/item?id=4013799
@@ -72,3 +83,4 @@ Then there is also the option of doing the opposite, forwarding email from your 
 [gandi_search]: https://shop.gandi.net/en/domain/suggest
 [gandimail]: https://webmail.gandi.net/
 [spfwiki]: https://en.wikipedia.org/wiki/Sender_Policy_Framework
+[spfgandi]: https://wiki.gandi.net/en/dns/zone/spf-record
