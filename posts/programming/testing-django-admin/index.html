@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing Django admin</title>
+
+    <meta name="author" content="Jonathan Sundqvist">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="http://www.argpar.se/theme/css/milk.min.css" rel="stylesheet">
+    <link href="http://www.argpar.se/theme/css/milk-responsive.min.css" rel="stylesheet">
+    <link href="http://www.argpar.se/theme/css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="http://www.argpar.se/theme/css/fonts.css" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="shortcut icon" href="http://www.argpar.se/theme/images/alexfinn.ico">
+    <link rel="apple-touch-icon" href="">
+
+        <link href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="argpar.se Atom Feed" />
+
+
+  </head>
+
+  <body>
+<div class="navbar navbar-fixed-top">
+  <div id="navbar-inner" class="menu-container">
+    <h2 class="menu-item-2">
+      <a href="http://www.argpar.se/about">About</a>
+    </h2>
+    <div class="menu-item-3" id="logo">
+      <a href="http://www.argpar.se"><img src="http://www.argpar.se/theme/images/letter-a.png" width="100px"></img></a>
+    </div>
+    <h2 class="menu-item-4"><a href="mailto:jonathan@argpar.se">Contact</a></h2>
+  </div>
+</div>    <div class="container">
+        <div class="content">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="posts">
+
+<section id="content" class="body">
+    <article class="post">
+        <header class="post-header">
+            <h1 class="entry-title">
+                <a href="http://www.argpar.se/posts/programming/testing-django-admin" rel="bookmark" title="Permalink to Testing Django admin">Testing Django admin</a>
+            </h1>
+            <div class="post-time">08 July 2018</div>
+        </header>
+        <div class="post-after">
+            <div class="tags">
+                    <a href="http://www.argpar.se/tag/python" title="">python</a>
+                    <a href="http://www.argpar.se/tag/django" title="">django</a>
+                    <a href="http://www.argpar.se/tag/programming" title="">programming</a>
+                    <a href="http://www.argpar.se/tag/django-admin" title="">django-admin</a>
+            </div>
+        </div>
+        <hr>
+        <div class="content">
+            <p>It's not exactly crystal clear how to test the functionalities that you add to django admin without diving into the source code of Django. So here are a few tips and snippets that'll help.</p>
+<h2>Testing ModelAdmin methods</h2>
+<p>When you come to the point that you need to override any of the <a href="admin_methods">ModelAdmin methods</a> how do you go about testing them? You could do it through the <code>client</code> and make a POST request to the view that saves the model, but that is a lot of work.</p>
+<p>Most of the ModelAdmin methods requrie a request. So if we mock that out, we can quite easily test the method without taking much else into account.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin.sites.import</span> <span class="nn">AdminSite</span>
+<span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+
+<span class="k">class</span> <span class="nc">MockRequest</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">MockSuperUser</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">has_perm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">perm</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+
+<span class="n">request</span> <span class="o">=</span> <span class="n">MockRequest</span><span class="p">()</span>
+<span class="n">request</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">MockSuperUser</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">MyAdminTest</span><span class="p">(</span><span class="n">Testcase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">AdminSite</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">admin</span> <span class="o">=</span> <span class="n">MyAdmin</span><span class="p">(</span><span class="n">MyModel</span><span class="p">,</span> <span class="n">site</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_delete_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">MyModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">delete_model</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+        <span class="n">deleted</span> <span class="o">=</span> <span class="n">MyModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">deleted</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>This way you don't need to focus much at all on the request argument and can focus on asserting on any side effects or other functionalities that your modified ModelAdmin methods does.</p>
+<h2>Testing a file upload in Django admin</h2>
+<p>If you're about to test an admin view where you upload some file, you'll need to use the test <code>Client</code> that django has in the <code>TestCase</code> class. Django has <a href="admin_post">some documentation</a> around how that works.</p>
+<p>The post method takes a path and a dictionary of DATA arguments. If one of these arguments is a file like object you'll be able to access it as <code>request.FILES</code> in the response.</p>
+<p>To test your file upload it would look like this.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>  <span class="c1"># you could use StringIO as well</span>
+
+<span class="k">class</span> <span class="nc">FileTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># the file in this case is modeled as a simple csv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;model_id</span><span class="se">\n</span><span class="s1">1</span><span class="se">\n</span><span class="s1">2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_file_upload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># each admin url consits of the following three things</span>
+        <span class="c1"># the app name, the name of the model and the name of the view</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;admin:appname_modelname_viewname&#39;</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form_filefield&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">})</span>
+
+        <span class="c1"># Here you&#39;ll want to do extra assertions, ie are you</span>
+        <span class="c1"># saving the file in a model, streaming something back in</span>
+        <span class="c1"># streamingresponse or doing something else.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The file like object you also be a file handler as in this example.</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form_filefield&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">})</span>
+</pre></div>
+
+
+<p>Though I find that if you just want to test something not too complex it's easier to use either <code>BytesIO</code> or <code>StringIO</code> and construct the file content in place rather than having file fixtures.</p>
+<p>Do you find that there are other tricky bits testing the django admin, <a href="argparse">tweet me</a> and I'll add it!</p>
+        </div>
+    </article>
+</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    Built with <a href="https://github.com/getpelican/pelican">Pelican</a>
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+        </a>
+    </p>
+</footer>
+    <!-- need to update this -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9947703-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>
