@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 
 AUTHOR = 'Jonathan Sundqvist'
-SITENAME = 'argpar.se'
+SITENAME = 'Argparse'
 SITEURL = ''
 SLUGIFY_SOURCE = 'title'
 IGNORE_FILES = ['template.md']
@@ -83,5 +83,5 @@ def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
 JINJA_FILTERS = {
     'datetimeformat': datetimeformat
 }
-TWITTER_USERNAME = 'argparse'
+TWITTER_USERNAME = '@argparse'
 EMAIL = 'jonathan@argpar.se'
