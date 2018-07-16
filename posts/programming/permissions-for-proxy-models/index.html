@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Permissions for Proxy models</title>
+
+    <meta name="author" content="Jonathan Sundqvist">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="http://www.argpar.se/theme/css/milk.min.css" rel="stylesheet">
+    <link href="http://www.argpar.se/theme/css/milk-responsive.min.css" rel="stylesheet">
+    <link href="http://www.argpar.se/theme/css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="http://www.argpar.se/theme/css/fonts.css" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="shortcut icon" href="http://www.argpar.se/theme/images/alexfinn.ico">
+    <link rel="apple-touch-icon" href="">
+
+        <link href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Argparse Atom Feed" />
+
+
+  </head>
+
+  <body>
+<div class="navbar navbar-fixed-top">
+  <div id="navbar-inner" class="menu-container">
+    <h2 class="menu-item-2">
+      <a href="http://www.argpar.se/about">About</a>
+    </h2>
+    <div class="menu-item-3" id="logo">
+      <a href="http://www.argpar.se"><img src="http://www.argpar.se/theme/images/letter-a.png" width="100px"></img></a>
+    </div>
+    <h2 class="menu-item-4"><a href="mailto:jonathan@argpar.se">Contact</a></h2>
+  </div>
+</div>    <div class="container">
+        <div class="content">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="posts">
+
+<section id="content" class="body">
+    <article class="post">
+        <header class="post-header">
+            <h1 class="entry-title">
+                <a href="http://www.argpar.se/posts/programming/permissions-for-proxy-models" rel="bookmark" title="Permalink to Permissions for Proxy models">Permissions for Proxy models</a>
+            </h1>
+            <div class="post-time">16 July 2018</div>
+        </header>
+        <div class="post-after">
+            <div class="tags">
+                    <a href="http://www.argpar.se/tag/django" title="">django</a>
+                    <a href="http://www.argpar.se/tag/python" title="">python</a>
+                    <a href="http://www.argpar.se/tag/django-admin" title="">django-admin</a>
+                    <a href="http://www.argpar.se/tag/programming" title="">programming</a>
+            </div>
+        </div>
+        <hr>
+        <div class="content">
+            <p>Proxy models are pretty useful if you want to create a new customized view in django admin. Let's say that you have a normal model and that you need a specific view where you can do bulk uploads. Creating a proxy model from your normal model and then using the django admin on top of your new proxy model gets you a clean separation of the regular list view and your custom django admin view.</p>
+<p>So you've created your custom django view and you want that appropriately permissioned like the normal models are. That is, it'll have the following three permissions</p>
+<ul>
+<li>add permission</li>
+<li>delete permission</li>
+<li>change permission</li>
+</ul>
+<p>To your surprise when creating and migrating your proxy model it doesn't create any permissions at all for you. It's quite an annoyance unless you know about it. There has been a <a href="https://code.djangoproject.com/ticket/11154">long-standing ticket</a> open for exactly this.</p>
+<p>When the migration of your proxy model has been created, you can add the following code to the migration to get the appropriate permissions as you'd expect it to have. Then use <code>migrations.RunPython(create_permissions)</code> as an added operation. As you can see in the <a href="https://docs.djangoproject.com/en/2.0/topics/migrations/#data-migrations">django documentation</a></p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.auth.management</span> <span class="kn">import</span> <span class="n">_get_all_permissions</span>
+
+<span class="k">def</span> <span class="nf">create_permissions</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">schema_editor</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">django.contrib.contenttypes.models</span> <span class="kn">import</span> <span class="n">ContentType</span>
+    <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">Permission</span>
+
+    <span class="n">YourModel</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s1">&#39;app_label&#39;</span><span class="p">,</span> <span class="s1">&#39;ModelName&#39;</span><span class="p">)</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">_meta</span>
+    <span class="n">content_type</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">ContentType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span>
+        <span class="n">app_label</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">app_label</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">object_name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">codename</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_get_all_permissions</span><span class="p">(</span><span class="n">opts</span><span class="p">):</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">Permission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span>
+            <span class="n">codename</span><span class="o">=</span><span class="n">codename</span><span class="p">,</span>
+            <span class="n">content_type</span><span class="o">=</span><span class="n">content_type</span><span class="p">,</span>
+            <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">}</span>
+        <span class="p">)</span>
+</pre></div>
+
+
+<p>There is also a <a href="https://gist.github.com/magopian/7543724">gist</a> around describing how you could add a post-migrate signal so that proxy models always get their appropriate permissions.</p>
+        </div>
+    </article>
+</section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    Built with <a href="https://github.com/getpelican/pelican">Pelican</a>
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+        </a>
+    </p>
+</footer>
+    <!-- need to update this -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9947703-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>
