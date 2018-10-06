@@ -11,10 +11,10 @@ It's not exactly crystal clear how to test the functionalities that you add to d
 
 When you come to the point that you need to override any of the [ModelAdmin methods](admin_methods) how do you go about testing them? You could do it through the `client` and make a POST request to the view that saves the model, but that is a lot of work.
 
-Most of the ModelAdmin methods requrie a request. So if we mock that out, we can quite easily test the method without taking much else into account.
+Most of the ModelAdmin methods require a request. So if we mock that out, we can quite easily test the method without taking much else into account.
 
 ```python
-from django.contrib.admin.sites.import AdminSite
+from django.contrib.admin.sites import AdminSite
 from django.test import TestCase
 
 
