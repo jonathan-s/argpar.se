@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import json
 
 
 AUTHOR = 'Jonathan Sundqvist'
@@ -80,8 +81,13 @@ def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
     return value.strftime(format)
 
 
+def jsonarray(value):
+    return json.dumps([str(v) for v in value])
+
+
 JINJA_FILTERS = {
-    'datetimeformat': datetimeformat
+    'datetimeformat': datetimeformat,
+    'jsonarray': jsonarray
 }
 TWITTER_USERNAME = '@argparse'
 EMAIL = 'jonathan@argpar.se'
