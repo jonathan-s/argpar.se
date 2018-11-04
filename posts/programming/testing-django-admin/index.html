@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <title>Testing Django admin</title>
 
-    <meta name="author" content="Jonathan Sundqvist">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:creator" content="Jonathan Sundqvist">
+<meta property="twitter:site" content="@argparse">
+<meta property="twitter:creator" content="@argparse">
+
+<meta property="og:site_name" content="Argparse - Jonathan Sundqvist">
+<meta property="og:locale" content="en_GB">
+
+
+<link rel="canonical" href="http://www.argpar.se/posts/programming/testing-django-admin">
+<meta name="description" content="Get some handy tips for testing the django admin.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Testing Django admin">
+<meta property="og:description" content="Get some handy tips for testing the django admin.">
+<meta property="og:url" content="http://www.argpar.se/posts/programming/testing-django-admin">
+<!-- <meta property="og:updated_time" content=""> -->
+<!-- <meta property="article:modified_time" content=""> -->
+<!-- <meta property="article:published_time" content=""> -->
+<meta property="og:image" content="">
+
+<meta property="article:author" content="https://www.facebook.com/jonathan.sundqvist">
+<meta property="article:section" content="programming">
+<meta property="article:tags" content="python, django, programming, django-admin">
+
+
+<meta property="twitter:description" content="Get some handy tips for testing the django admin.">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.argpar.se/"
+      },
+      "headline": "Testing Django admin",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "author": {
+        "@type": "Person",
+        "name": "Jonathan Sundqvist"
+      },
+       "publisher": {
+        "@type": "Person",
+        "name": "Jonathan Sundqvist",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "http://www.argpar.se/theme/images/letter-a.png"
+        }
+      },
+      "keywords": python, django, programming, django-admin
+      "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.42",
+          "reviewCount": "28"
+      }
+      "wordCount": 434,
+      "description": "Get some handy tips for testing the django admin."
+    }
+</script>
+
 
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -23,7 +88,6 @@
     <link rel="apple-touch-icon" href="">
 
         <link href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Argparse Atom Feed" />
-
 
   </head>
 
@@ -65,8 +129,8 @@
             <p>It's not exactly crystal clear how to test the functionalities that you add to django admin without diving into the source code of Django. So here are a few tips and snippets that'll help.</p>
 <h2>Testing ModelAdmin methods</h2>
 <p>When you come to the point that you need to override any of the <a href="admin_methods">ModelAdmin methods</a> how do you go about testing them? You could do it through the <code>client</code> and make a POST request to the view that saves the model, but that is a lot of work.</p>
-<p>Most of the ModelAdmin methods requrie a request. So if we mock that out, we can quite easily test the method without taking much else into account.</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin.sites.import</span> <span class="nn">AdminSite</span>
+<p>Most of the ModelAdmin methods require a request. So if we mock that out, we can quite easily test the method without taking much else into account.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin.sites</span> <span class="kn">import</span> <span class="n">AdminSite</span>
 <span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
 
 

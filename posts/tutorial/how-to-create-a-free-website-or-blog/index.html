@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <title>How to create a free website or blog</title>
 
-    <meta name="author" content="Jonathan Sundqvist">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:creator" content="Jonathan Sundqvist">
+<meta property="twitter:site" content="@argparse">
+<meta property="twitter:creator" content="@argparse">
+
+<meta property="og:site_name" content="Argparse - Jonathan Sundqvist">
+<meta property="og:locale" content="en_GB">
+
+
+<link rel="canonical" href="http://www.argpar.se/posts/tutorial/how-to-create-a-free-website-or-blog">
+<meta name="description" content="Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to create a free website or blog">
+<meta property="og:description" content="Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.">
+<meta property="og:url" content="http://www.argpar.se/posts/tutorial/how-to-create-a-free-website-or-blog">
+<!-- <meta property="og:updated_time" content=""> -->
+<!-- <meta property="article:modified_time" content=""> -->
+<!-- <meta property="article:published_time" content=""> -->
+<meta property="og:image" content="">
+
+<meta property="article:author" content="https://www.facebook.com/jonathan.sundqvist">
+<meta property="article:section" content="tutorial">
+<meta property="article:tags" content="blog, pelican, web development">
+
+
+<meta property="twitter:description" content="Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.argpar.se/"
+      },
+      "headline": "How to create a free website or blog",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "author": {
+        "@type": "Person",
+        "name": "Jonathan Sundqvist"
+      },
+       "publisher": {
+        "@type": "Person",
+        "name": "Jonathan Sundqvist",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "http://www.argpar.se/theme/images/letter-a.png"
+        }
+      },
+      "keywords": blog, pelican, web development
+      "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.42",
+          "reviewCount": "28"
+      }
+      "wordCount": 1679,
+      "description": "Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain."
+    }
+</script>
+
 
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -23,7 +88,6 @@
     <link rel="apple-touch-icon" href="">
 
         <link href="http://www.argpar.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Argparse Atom Feed" />
-
 
   </head>
 
@@ -61,30 +125,30 @@
         </div>
         <hr>
         <div class="content">
-            <p><img alt="Pelican" src="http://www.argpar.se/images/pelican.jpg"></p>
-<p>There are many options out there if you want to create your own website. But if you want customizability and still come away on the cheap the options shrink considerably. However if you create your website with something called a static site generator you'll be able to achieve exactly this. The only thing that you'll have to pay for in the end is the domain. (Though, to be fair if you don't mind ads you could use a <a href="dot.tk">dot.tk</a> domain). </p>
-<p>So let's get down to business. </p>
+            <p><img alt="Pelican" src="http://www.argpar.se/images/pelican.jpg" /></p>
+<p>There are many options out there if you want to create your own website. But if you want customizability and still come away on the cheap the options shrink considerably. However if you create your website with something called a static site generator you'll be able to achieve exactly this. The only thing that you'll have to pay for in the end is the domain. (Though, to be fair if you don't mind ads you could use a <a href="dot.tk">dot.tk</a> domain).</p>
+<p>So let's get down to business.</p>
 <h2>Host your website</h2>
-<p>Your website needs to be hosted somewhere and the easiest and cheapest solution is by far to host it on Github. If you don't have an account there yet now is the time to create one! </p>
-<p>Create a <a href="https://github.com/new">new repo</a> and name it anything you like. The easiest way to manage this repo is through the git client that <a href="http://git-scm.com/downloads/guis">Github itself developed</a>. So it would either be Github for Mac or Windows. If you're comfortable with git you already know what to do. If you are unfamiliar with git and would like to understand how it works I would recommend that you take a look at <a href="https://www.git-tower.com/learn/git/videos">some videos</a>. </p>
-<p><img alt="Cloning github" src="http://www.argpar.se/images/github-clone.png"></p>
-<p>When you've downloaded the client you can choose to clone the repo that you already created onto your harddrive. That way you'll have a local copy of all the data in the repo which you can then push to remote repo at Github. </p>
-<p>At the moment you only have blank folder, the next step is to set up the static site generator that will magically get your website up and running. </p>
+<p>Your website needs to be hosted somewhere and the easiest and cheapest solution is by far to host it on Github. If you don't have an account there yet now is the time to create one!</p>
+<p>Create a <a href="https://github.com/new">new repo</a> and name it anything you like. The easiest way to manage this repo is through the git client that <a href="http://git-scm.com/downloads/guis">Github itself developed</a>. So it would either be Github for Mac or Windows. If you're comfortable with git you already know what to do. If you are unfamiliar with git and would like to understand how it works I would recommend that you take a look at <a href="https://www.git-tower.com/learn/git/videos">some videos</a>.</p>
+<p><img alt="Cloning github" src="http://www.argpar.se/images/github-clone.png" /></p>
+<p>When you've downloaded the client you can choose to clone the repo that you already created onto your harddrive. That way you'll have a local copy of all the data in the repo which you can then push to remote repo at Github.</p>
+<p>At the moment you only have blank folder, the next step is to set up the static site generator that will magically get your website up and running.</p>
 <h2>Installing Pelican, the software for your website</h2>
-<p>There are a couple of static site generators out there. One of them is Pelican which we will be using today. However, before you can install Pelican you'll need to have Python and Pip installed as well. You can find the instructions on how to get that installed for your OS <a href="http://docs.python-guide.org/en/latest/">right here</a>. Generally I would recommend that you get python 3 installed. Python 2.7 works equally well though. </p>
-<p>Now you've got all the requirements for installing Pelican. To install Pelican create a file named <code>requirements.txt</code> in the empty folder that you cloned from Github. </p>
-<p><code>requirements.txt</code> should contain the following: </p>
+<p>There are a couple of static site generators out there. One of them is Pelican which we will be using today. However, before you can install Pelican you'll need to have Python and Pip installed as well. You can find the instructions on how to get that installed for your OS <a href="http://docs.python-guide.org/en/latest/">right here</a>. Generally I would recommend that you get python 3 installed. Python 2.7 works equally well though.</p>
+<p>Now you've got all the requirements for installing Pelican. To install Pelican create a file named <code>requirements.txt</code> in the empty folder that you cloned from Github.</p>
+<p><code>requirements.txt</code> should contain the following:</p>
 <div class="highlight"><pre><span></span>markdown
 git+https://github.com/getpelican/pelican.git
 ghp-import
 </pre></div>
 
 
-<p>To get the installation started go to the commandline and into the directory with <code>requirements.txt</code>, then type in <code>pip3 -r requirements.txt</code> or <code>pip -r requirements.txt</code> if you have python 2.7 installed. </p>
-<p>You should see the installation happening and once it's done you can install all the necessary files with the command <code>pelican-quickstart</code>. At this point you'll have to answer a couple of questions about your future website. This will generate some basic settings for your website. We will take a closer look at these settings further down. </p>
-<p>I'm going to assume that you will answer yes to the question on generating a Fabfile/Makefile. I will also assume that you answer yes to wanting a an auto-reload script. I promise, it will make your life easier! After those two questions it will ask you questions about where you want to host your website. Keep answering no until until it asks you if you want tu use GitHub Pages. It will then ask you if you want to use your personal page and you should answer no to that. What you'll be using is called a project page. </p>
+<p>To get the installation started go to the commandline and into the directory with <code>requirements.txt</code>, then type in <code>pip3 -r requirements.txt</code> or <code>pip -r requirements.txt</code> if you have python 2.7 installed.</p>
+<p>You should see the installation happening and once it's done you can install all the necessary files with the command <code>pelican-quickstart</code>. At this point you'll have to answer a couple of questions about your future website. This will generate some basic settings for your website. We will take a closer look at these settings further down.</p>
+<p>I'm going to assume that you will answer yes to the question on generating a Fabfile/Makefile. I will also assume that you answer yes to wanting a an auto-reload script. I promise, it will make your life easier! After those two questions it will ask you questions about where you want to host your website. Keep answering no until until it asks you if you want tu use GitHub Pages. It will then ask you if you want to use your personal page and you should answer no to that. What you'll be using is called a project page.</p>
 <h2>Creating pages for your website with Pelican</h2>
-<p>After the inquisitive questions you've got more more files in your folder and it should looks something like this: </p>
+<p>After the inquisitive questions you've got more more files in your folder and it should looks something like this:</p>
 <div class="highlight"><pre><span></span>your website/
 ├── content
 |   ├── (name_of_category)
@@ -98,7 +162,7 @@ ghp-import
 </pre></div>
 
 
-<p>In the content folder you can now create a new file with the file extension <code>your_blogpost.md</code>. At the very top of the file you created you'll have some meta data about the the blog post. Which will look something like this. </p>
+<p>In the content folder you can now create a new file with the file extension <code>your_blogpost.md</code>. At the very top of the file you created you'll have some meta data about the the blog post. Which will look something like this.</p>
 <div class="highlight"><pre><span></span><span class="nl">Title</span><span class="p">:</span> <span class="n">How</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">website</span>
 <span class="nl">Date</span><span class="p">:</span> <span class="mi">2015</span><span class="o">-</span><span class="mo">05</span><span class="o">-</span><span class="mi">17</span> <span class="mi">16</span><span class="o">:</span><span class="mo">00</span>
 <span class="nl">Category</span><span class="p">:</span> <span class="n">website</span>
@@ -113,9 +177,9 @@ ghp-import
 </pre></div>
 
 
-<p>That's all you need for a blog post. If you want your posts ordered in folders you'll have to make sure that category is set in the posts, as there is a setting that automatically uses folders as categories if no category is used in the post itself. </p>
-<p>To add a page instead of just a blog post you'll place the markdown file in the pages folder. For a page the only two things you need is a "title" and "status" which can either be "published", "draft" or "hidden". If a page is hidden it's published but won't show up in any menus that pages normally show up in. </p>
-<p>By default the url structure will be <code>yoursite.com/pages/my-page</code>. However you can change the url structure as you please as described in the example below. </p>
+<p>That's all you need for a blog post. If you want your posts ordered in folders you'll have to make sure that category is set in the posts, as there is a setting that automatically uses folders as categories if no category is used in the post itself.</p>
+<p>To add a page instead of just a blog post you'll place the markdown file in the pages folder. For a page the only two things you need is a "title" and "status" which can either be "published", "draft" or "hidden". If a page is hidden it's published but won't show up in any menus that pages normally show up in.</p>
+<p>By default the url structure will be <code>yoursite.com/pages/my-page</code>. However you can change the url structure as you please as described in the example below.</p>
 <div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">About</span> <span class="n">me</span>
 <span class="n">Status</span><span class="o">:</span> <span class="n">published</span>
 <span class="n">url</span><span class="o">:</span> <span class="n">thispath</span><span class="o">/</span><span class="n">about</span><span class="o">-</span><span class="n">me</span>
@@ -123,29 +187,29 @@ ghp-import
 </pre></div>
 
 
-<p>In fact once you've created these two pages. You can view what your website looks like locally. If you type in <code>make devserver</code> into the terminal. It will start to generate the website for you. Once that's done you can try to visit your website at the following address <a href="http://localhost:8000">http://localhost:8000</a>. That's what it will look like. Perhaps you want it to look differently? Then continue to read on and we will make those changes as well.  </p>
+<p>In fact once you've created these two pages. You can view what your website looks like locally. If you type in <code>make devserver</code> into the terminal. It will start to generate the website for you. Once that's done you can try to visit your website at the following address <a href="http://localhost:8000">http://localhost:8000</a>. That's what it will look like. Perhaps you want it to look differently? Then continue to read on and we will make those changes as well.</p>
 <h2>How to manage pelican's website settings</h2>
-<p>Now that you've installed pelican and run the command <code>pelican-quickstart</code> there are already two files used as settings in the folder for your website; <code>pelicanconf.py</code> and <code>publishconf.py</code>. This is where all the settings are stored. To quickly get up to speed I would suggest that you copy the settings that aren't the same from <a href="https://github.com/jonathan-s/argpar.se/">my github repository</a>. That way you can customize the settings more quickly. </p>
-<p>Now that you've copied the settings. Let's take a closer look at what some of them do. <code>pelicanconf.py</code> is where you set the base settings. Any settings that needs to be different when publishing should be set in <code>publishconf.py</code>. It   </p>
+<p>Now that you've installed pelican and run the command <code>pelican-quickstart</code> there are already two files used as settings in the folder for your website; <code>pelicanconf.py</code> and <code>publishconf.py</code>. This is where all the settings are stored. To quickly get up to speed I would suggest that you copy the settings that aren't the same from <a href="https://github.com/jonathan-s/argpar.se/">my github repository</a>. That way you can customize the settings more quickly.</p>
+<p>Now that you've copied the settings. Let's take a closer look at what some of them do. <code>pelicanconf.py</code> is where you set the base settings. Any settings that needs to be different when publishing should be set in <code>publishconf.py</code>. It</p>
 <ul>
-<li><code>SLUGIFY_SOURCE</code> - This is what input it will use to create a slug, that is, a url-friendly link. It makes most sense to leave it as title.  </li>
-<li><code>WITH_FUTURE_DATES</code> - If let this option be "False" it won't publish posts that are still in the future. This way you can schedule posts. </li>
-<li><code>PATH</code> - This is the folder where all your pages or blog posts in markdown will be as well as any extra folders that you want to end up on the website. </li>
+<li><code>SLUGIFY_SOURCE</code> - This is what input it will use to create a slug, that is, a url-friendly link. It makes most sense to leave it as title.</li>
+<li><code>WITH_FUTURE_DATES</code> - If let this option be "False" it won't publish posts that are still in the future. This way you can schedule posts.</li>
+<li><code>PATH</code> - This is the folder where all your pages or blog posts in markdown will be as well as any extra folders that you want to end up on the website.</li>
 <li><code>THEME</code> - This is the name of the theme you will be using. When you've just pelican you'll only have one theme. There are more <a href="http://pelicanthemes.com/">themes to download </a>. Once you've downloaded a theme you can install it with the following command <code>pelican-themes -s path/to/themefolder</code>. You can then verify that it's installed with <code>pelican-themes -l</code>.</li>
-<li><code>STATIC_PATHS</code> - Here you can create folders that will be created as urls for the website. </li>
+<li><code>STATIC_PATHS</code> - Here you can create folders that will be created as urls for the website.</li>
 <li><code>EXTRA_PATH_METADATA</code> - If you don't want the files in the static path to have a different path you can change that here. And follow the structure in my <a href="https://github.com/jonathan-s/argpar.se/blob/master/pelicanconf.py#L52">pelicanconf.py</a></li>
 <li><code>*_URL</code> and <code>*_SAVE_AS</code> - these define the url structure of your website for your pages and posts and they have to correlate with each other. So if you want the url of an article to be <code>posts/{category}/{slug}</code> you'll also have to save as <code>posts/{category}</code></li>
 </ul>
-<p>These should be the most important ones. There are other settings that you can read about in <a href="http://docs.getpelican.com/">the manual </a>. </p>
+<p>These should be the most important ones. There are other settings that you can read about in <a href="http://docs.getpelican.com/">the manual </a>.</p>
 <h2>Getting the website live and creating a domain</h2>
-<p>Now that you've gotten everything set up the way you want it's time to get the website live. After you've made sure that everything looks good in the browser using <code>make devserver</code> we can take the step to get it live on internet. </p>
-<p>You can do that with the simple command <code>make github</code> and that will generate the website and publish all the html files in the repo that you created earlier. </p>
-<p>Now you can go to <code>http://your-username.github.io/your-repo</code> and view your website. It's live! </p>
-<p>The last step of this tutorial will be to create a domain for your website. I'm going to use <a href="www.gandi.net">Gandi</a>. They have a huge selection of domains, they don't collect your data if you don't want them to and generally they have <a href="https://www.gandi.net/no-bullshit">good attitude</a>. So they are definitely a good option! </p>
-<p>Once you have created your domain you'll have to make changes to the what Gandi calls the <a href="https://wiki.gandi.net/en/dns/zone/edit">'Zone file'</a>. It will look like the image below. </p>
-<p><img alt="Zone file at Gandi" src="http://www.argpar.se/images/zone-file.png"></p>
-<p>Create a new version of the Zone file and add a new record. The type you should use when you add a new record is <code>CNAME</code>. The name has to be <code>www</code>. So in the end the address would be <code>www.your-domain.com</code> to your website. The value on the other hand should be <code>your-username.github.io.</code>. It's important that you have that last dot, otherwise it won't work. After you've added the record, start using the zone file that you just modified. It will take a couple of hours before the changes apply to the domain. </p>
-<p>While you are waiting you can make one final change to the settings of your website. Create a new folder called <code>extra</code> in your <code>content</code> folder where you have all your files. In this new folder create a file named <code>CNAME</code> with capital letters. In this file write a single line with your domain. It should look something like this: <code>www.your-domain.com</code>. The last thing you need to do is to add this line: <code>'extra/CNAME': {'path': 'CNAME'}</code> to <code>EXTRA_PATH_METADATA</code> in <code>pelicanconf.py</code>. Execute <code>make github</code> in the terminal to upload the changes to github again and you're good to go. </p>
+<p>Now that you've gotten everything set up the way you want it's time to get the website live. After you've made sure that everything looks good in the browser using <code>make devserver</code> we can take the step to get it live on internet.</p>
+<p>You can do that with the simple command <code>make github</code> and that will generate the website and publish all the html files in the repo that you created earlier.</p>
+<p>Now you can go to <code>http://your-username.github.io/your-repo</code> and view your website. It's live!</p>
+<p>The last step of this tutorial will be to create a domain for your website. I'm going to use <a href="www.gandi.net">Gandi</a>. They have a huge selection of domains, they don't collect your data if you don't want them to and generally they have <a href="https://www.gandi.net/no-bullshit">good attitude</a>. So they are definitely a good option!</p>
+<p>Once you have created your domain you'll have to make changes to the what Gandi calls the <a href="https://wiki.gandi.net/en/dns/zone/edit">'Zone file'</a>. It will look like the image below.</p>
+<p><img alt="Zone file at Gandi" src="http://www.argpar.se/images/zone-file.png" /></p>
+<p>Create a new version of the Zone file and add a new record. The type you should use when you add a new record is <code>CNAME</code>. The name has to be <code>www</code>. So in the end the address would be <code>www.your-domain.com</code> to your website. The value on the other hand should be <code>your-username.github.io.</code>. It's important that you have that last dot, otherwise it won't work. After you've added the record, start using the zone file that you just modified. It will take a couple of hours before the changes apply to the domain.</p>
+<p>While you are waiting you can make one final change to the settings of your website. Create a new folder called <code>extra</code> in your <code>content</code> folder where you have all your files. In this new folder create a file named <code>CNAME</code> with capital letters. In this file write a single line with your domain. It should look something like this: <code>www.your-domain.com</code>. The last thing you need to do is to add this line: <code>'extra/CNAME': {'path': 'CNAME'}</code> to <code>EXTRA_PATH_METADATA</code> in <code>pelicanconf.py</code>. Execute <code>make github</code> in the terminal to upload the changes to github again and you're good to go.</p>
 <p>When you next visit your domain you should now see your website! Congratulations, you now have your own website! If you have any questions. Ask away!</p>
         </div>
     </article>
