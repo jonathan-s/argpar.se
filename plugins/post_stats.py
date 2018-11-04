@@ -46,8 +46,10 @@ def calculate_stats(instance):
         word_count = Counter(words)
 
         # Return the stats
+        total_words = sum(word_count.values())
         stats['word_counts'] = word_count
-        stats['wc'] = sum(word_count.values())
+        stats['total_words'] = total_words
+        stats['wc'] = total_words
 
         # Calulate how long it'll take to read, rounding up
         stats['read_mins'] = (stats['wc'] + WPM - 1) // WPM

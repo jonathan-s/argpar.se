@@ -3,6 +3,7 @@ Date: 2018-07-04 23:27
 Category: misc
 Tags: tutorial, email
 Authors: Jonathan Sundqvist
+Metadescription: This guide walks through all the steps to set up your own email for your own domain. Registering your domain -> Configuring the account -> Using with gmail
 Status: published
 
 There are many compelling reasons to have an email address with your own domain. My personal motivation is that you become a lot more independant from the tech giants. I've been using gmail for many years and stories  where google has [completely](goog1) [locked](goog2) [down](goog3) their google account are particularly frightening.
