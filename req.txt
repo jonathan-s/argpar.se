@@ -1,5 +1,0 @@
-markdown
-git+https://github.com/getpelican/pelican.git
-ghp-import
-beautifulsoup4
-pygments
