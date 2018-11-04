@@ -122,6 +122,7 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 publish_netlify:
+	rm -rf themes/simple-a
 	git clone https://github.com/jonathan-s/simple-a.git themes/simple-a
 	pelican-themes -i ./themes/simple-a
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
