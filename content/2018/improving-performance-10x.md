@@ -1,11 +1,14 @@
-Title: Title can be different
+Title: Improving the performance by 10x
 Date: 2015-05-17 16:00
-Category: misc
-Tags: pelican, publishing
-Slug: slug-here
+Category: programming
+Tags: django, python, performance
+Slug: improving-performance-by-10x
 Authors: Jonathan Sundqvist
 Metadescription: Some meta description
 Status: draft
+
+
+
 
 Here is where you put the text. This is an image ![Alt Text]({filename}/images/han.jpg)
 
