@@ -16,11 +16,9 @@ Most of the ModelAdmin methods require a request. So if we mock that out, we can
 
 ```python
 from django.contrib.admin.sites import AdminSite
+from django.contrib.messages.storage.fallback import FallbackStorage
 from django.test import TestCase
-
-
-class MockRequest:
-    pass
+from django.test import RequestFactory
 
 
 class MockSuperUser:
@@ -28,8 +26,15 @@ class MockSuperUser:
         return True
 
 
-request = MockRequest()
+request_factory = RequestFactory()
+request = request_factory.get('/admin')
 request.user = MockSuperUser()
+
+# If you need to test something using messages
+setattr(request, 'session', 'session')
+messages = FallbackStorage(request)
+setattr(request, '_messages', messages)
+
 
 class MyAdminTest(Testcase):
 
