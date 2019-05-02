@@ -26,3 +26,9 @@ To install the simple-a theme do the following. It'll symlink the theme
 so you can work on it.
 
 `pelican-themes -s ~/projects/argpar.se/themes/simple-a`
+
+Generating pygments css
+
+```bash
+pygmentize -S monokai -f html -a .highlight > pygment.css
+```
