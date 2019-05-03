@@ -1,7 +1,7 @@
 Title: Deploying Django using Dokku
 Date: 2019-05-1 20:00
 Category: programming
-Tags: django, devops, dokku
+Tags: django, devops, dokku, python
 Slug: deploy-django-using-dokku
 Authors: Jonathan Sundqvist
 Metadescription: Make your first steps in devops as you learn how to debug and deploy Django using dokku on a vps of your choice.
