@@ -116,7 +116,7 @@ You can do that with the simple command `make github` and that will generate the
 
 Now you can go to `http://your-username.github.io/your-repo` and view your website. It's live!
 
-The last step of this tutorial will be to create a domain for your website. I'm going to use [Gandi](www.gandi.net). They have a huge selection of domains, they don't collect your data if you don't want them to and generally they have [good attitude](https://www.gandi.net/no-bullshit). So they are definitely a good option!
+The last step of this tutorial will be to create a domain for your website. I'm going to use [Gandi](https://www.gandi.net). They have a huge selection of domains, they don't collect your data if you don't want them to and generally they have [good attitude](https://www.gandi.net/no-bullshit). So they are definitely a good option!
 
 Once you have created your domain you'll have to make changes to the what Gandi calls the ['Zone file'](https://wiki.gandi.net/en/dns/zone/edit). It will look like the image below.
 
