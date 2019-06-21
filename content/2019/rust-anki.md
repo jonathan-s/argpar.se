@@ -15,7 +15,7 @@ A few months go by, and I feel like I want to do something in Rust, get deeper. 
 
 Does it sound similar? Well, I decided I would do something about this, so I created an Anki deck which has 212 cards (updated 2019-06-21). The anki deck covers the rust book. The deck won't be that much of use if you haven't read the book. But I'd say it certainly helps you remember once you've read the book. 
 
-If you've never heard of Anki; in short it's flash card program which uses [spaced repetition][2] to help you remember. So even if I step away from rust at some future point I will remember the syntax, and now that you've also got the deck so do you!
+If you've never heard of Anki; in short it's flash card program which uses [spaced repetition][2] to help you remember. So even if I step away from rust at some future point I will remember the syntax, and now that you've also got the deck so will you!
 
 You can download the [deck][1] here. If you want to get a notification when I make any changes to the deck. Sign up below and I'll send you an email. 
 
