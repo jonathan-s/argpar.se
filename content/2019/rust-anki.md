@@ -134,8 +134,9 @@ BTC: 1MecLehGEMAPxBmDzTVNNYFHc35NaeZhMm
 <a href='https://ko-fi.com/Q5Q3KLKI' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </center>
 
-If you've got any feedback send me a tweet or email :). 
+If you've got any feedback send me a tweet, email or comment on [Hacker News][4] :). 
 
 [1]: {filename}/images/rust-anki.apkg
 [2]: https://en.wikipedia.org/wiki/Spaced_repetition
 [3]: https://www.amazon.com/Rust-Programming-Language-Steve-Klabnik/dp/1593278284
+[4]: https://news.ycombinator.com/item?id=20243335
