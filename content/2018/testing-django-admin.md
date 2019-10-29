@@ -10,7 +10,7 @@ It's not exactly crystal clear how to test the functionalities that you add to d
 
 ## Testing ModelAdmin methods
 
-When you come to the point that you need to override any of the [ModelAdmin methods](admin_methods) how do you go about testing them? You could do it through the `client` and make a POST request to the view that saves the model, but that is a lot of work.
+When you come to the point that you need to override any of the [ModelAdmin methods][admin_methods] how do you go about testing them? You could do it through the `client` and make a POST request to the view that saves the model, but that is a lot of work.
 
 Most of the ModelAdmin methods require a request. So if we mock that out, we can quite easily test the method without taking much else into account.
 
@@ -54,7 +54,7 @@ This way you don't need to focus much at all on the request argument and can foc
 
 ## Testing a file upload in Django admin
 
-If you're about to test an admin view where you upload some file, you'll need to use the test `Client` that django has in the `TestCase` class. Django has [some documentation](admin_post) around how that works.
+If you're about to test an admin view where you upload some file, you'll need to use the test `Client` that django has in the `TestCase` class. Django has [some documentation][admin_post] around how that works.
 
 The post method takes a path and a dictionary of DATA arguments. If one of these arguments is a file like object you'll be able to access it as `request.FILES` in the response.
 
@@ -91,7 +91,7 @@ with open('some_file.csv') as f:
 
 Though I find that if you just want to test something not too complex it's easier to use either `BytesIO` or `StringIO` and construct the file content in place rather than having file fixtures.
 
-Do you find that there are other tricky bits testing the django admin, [tweet me](argparse) and I'll add it!
+Do you find that there are other tricky bits testing the django admin, [tweet me][argparse] and I'll add it!
 
 [admin_methods]: https://docs.djangoproject.com/en/2.0/ref/contrib/admin/#modeladmin-methods
 [admin_post]: https://docs.djangoproject.com/en/2.0/topics/testing/tools/#django.test.Client.post
