@@ -12,6 +12,12 @@ Here I'm listing articles that I've especially well-written in topics that inter
 
 ## Django
 
-##### [How to Create a Subscription SaaS Application with Django and Stripe](https://www.saaspegasus.com/guides/django-stripe-integrate/#a-team-based-saas-typically-b2b)
+- [How to Create a Subscription SaaS Application with Django and Stripe](https://www.saaspegasus.com/guides/django-stripe-integrate/#a-team-based-saas-typically-b2b)
+- [Walkthrough on how to think about your infrastructure](https://mattsegal.dev/django-prod-architectures.html)
 
 
+
+## Performance
+
+- [Cache-control for civilians](https://csswizardry.com/2019/03/cache-control-for-civilians/)
+- [Caching like a boss in django](https://eralpbayraktar.com/blog/django/2020/caching-with-django-part-ii)
