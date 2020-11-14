@@ -1,5 +1,5 @@
 Title: Permissions for Proxy models
-Date: 2018-07-16 19:00
+date: 2018-07-16 19:00
 Category: programming
 Tags: django, python, django-admin, programming
 Authors: Jonathan Sundqvist

@@ -1,5 +1,5 @@
 Title: Getting an email with your own domain
-Date: 2018-07-04 23:27
+date: 2018-07-04 23:27
 Category: misc
 Tags: tutorial, email
 Authors: Jonathan Sundqvist

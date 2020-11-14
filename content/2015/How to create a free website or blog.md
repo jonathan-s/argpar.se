@@ -1,5 +1,5 @@
 Title: How to create a free website or blog
-Date: 2015-06-07 20:00
+date: 2015-06-07 20:00
 Category: tutorial
 Tags: blog, pelican, web development
 Authors: Jonathan Sundqvist

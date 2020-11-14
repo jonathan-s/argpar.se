@@ -1,5 +1,5 @@
 Title: Deploying Django using Dokku
-Date: 2019-05-1 20:00
+date: 2019-05-1 20:00
 Category: programming
 Tags: django, devops, dokku, python
 Slug: deploy-django-using-dokku

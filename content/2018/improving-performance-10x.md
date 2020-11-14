@@ -1,5 +1,5 @@
 Title: Improving the performance by 10x
-Date: 2015-05-17 16:00
+date: 2015-05-17 16:00
 Category: programming
 Tags: django, python, performance
 Slug: improving-performance-by-10x

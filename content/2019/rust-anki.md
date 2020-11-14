@@ -1,23 +1,23 @@
 Title: Remembering Rust with Anki
-Date: 2019-06-21 16:00
+date: 2019-06-21 16:00
 Category: programming
 Tags: rust, anki
 Slug: remembering-rust-with-anki
 Authors: Jonathan Sundqvist
-Metadescription: Rust has a steep learning curve, what if you could ease into the language. This deck of anki cards will help you with that. 
+Metadescription: Rust has a steep learning curve, what if you could ease into the language. This deck of anki cards will help you with that.
 Status: published
 image: images/rust-crab.svg
 internal: #rust #anki
 
-I've read [The Book][3] once before, but it was a long time ago, and at some point I read an o'reilly book about rust too. At the time of reading those books. It felt like the language made sense. I would remember what I read, surely. 
+I've read [The Book][3] once before, but it was a long time ago, and at some point I read an o'reilly book about rust too. At the time of reading those books. It felt like the language made sense. I would remember what I read, surely.
 
-A few months go by, and I feel like I want to do something in Rust, get deeper. So I sit down in front of my computer with a blank stare. What is the exact syntax of doing a for loop again in rust? Let alone how do you even make a generic struct that is trait bounded. 
+A few months go by, and I feel like I want to do something in Rust, get deeper. So I sit down in front of my computer with a blank stare. What is the exact syntax of doing a for loop again in rust? Let alone how do you even make a generic struct that is trait bounded.
 
-Does it sound similar? Well, I decided I would do something about this, so I created an Anki deck which has 212 cards (updated 2019-06-21). The anki deck covers the rust book. The deck won't be that much of use if you haven't read the book. But I'd say it certainly helps you remember once you've read the book. 
+Does it sound similar? Well, I decided I would do something about this, so I created an Anki deck which has 212 cards (updated 2019-06-21). The anki deck covers the rust book. The deck won't be that much of use if you haven't read the book. But I'd say it certainly helps you remember once you've read the book.
 
 If you've never heard of Anki; in short it's flash card program which uses [spaced repetition][2] to help you remember. So even if I step away from rust at some future point I will remember the syntax, and now that you've also got the deck so will you!
 
-You can download the [deck][1] here. If you want to get a notification when I make any changes to the deck. Sign up below and I'll send you an email. 
+You can download the [deck][1] here. If you want to get a notification when I make any changes to the deck. Sign up below and I'll send you an email.
 
 
 <!-- Begin Mailchimp Signup Form -->
@@ -127,14 +127,14 @@ var $mcj = jQuery.noConflict(true);
 <!--End mc_embed_signup-->
 
 <center>
-If feel like this helped you remembering rust. You can send me a donation. 
+If feel like this helped you remembering rust. You can send me a donation.
 
 BTC: 1MecLehGEMAPxBmDzTVNNYFHc35NaeZhMm
 
 <a href='https://ko-fi.com/Q5Q3KLKI' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </center>
 
-If you've got any feedback send me a tweet, email or comment on [Hacker News][4] :). 
+If you've got any feedback send me a tweet, email or comment on [Hacker News][4] :).
 
 [1]: {filename}/images/rust-anki.apkg
 [2]: https://en.wikipedia.org/wiki/Spaced_repetition

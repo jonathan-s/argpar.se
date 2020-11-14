@@ -9,7 +9,7 @@ SITENAME = 'Argparse'
 SITEURL = ''
 SLUGIFY_SOURCE = 'title'
 IGNORE_FILES = ['template.md']
-THEME = 'simple-a'
+THEME = 'themes/simple-a'
 WITH_FUTURE_DATES = False
 LOAD_CONTENT_CACHE = False        # if you are developing a theme turn these off.
 AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off.
@@ -18,7 +18,7 @@ PATH = 'content'
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['post_stats']
 
-TIMEZONE = 'Europe/London'
+TIMEZONE = 'Europe/Berlin'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -32,6 +32,7 @@ ARTICLE_URL = 'posts/{category}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{category}/{slug}/index.html'
 
 DRAFT_URL = 'drafts/{slug}'
+DRAFT_SAVE_AS = 'drafts/{slug}/index.html'
 
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'

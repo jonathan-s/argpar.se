@@ -1,5 +1,5 @@
 Title: Testing Django admin
-Date: 2018-07-08 14:10
+date: 2018-07-08 14:10
 Category: programming
 Tags: python, django, programming, django-admin
 Authors: Jonathan Sundqvist
