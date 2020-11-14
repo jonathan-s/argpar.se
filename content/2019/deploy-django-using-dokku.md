@@ -6,6 +6,7 @@ Slug: deploy-django-using-dokku
 Authors: Jonathan Sundqvist
 Metadescription: Make your first steps in devops as you learn how to debug and deploy Django using dokku on a vps of your choice.
 Status: published
+internal: #published #django #devops #dokku #python
 
 ## I want to see my site on the web!
 

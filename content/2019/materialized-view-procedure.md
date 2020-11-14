@@ -7,6 +7,7 @@ Authors: Jonathan Sundqvist
 Metadescription: 
 Status: published
 image: images/mysql-procedure.png
+internal: #published #sql #mysql
 
 In newer versions of MySQL you can create materialized views directly without any SQL procedures. However I recently had to work with a database that used MySQL 5.6 and in that version it's not possible to create materialized views.
 

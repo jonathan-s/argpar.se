@@ -6,6 +6,7 @@ Slug: making-custom-join-django-foregoing-in
 Authors: Jonathan Sundqvist
 Metadescription: Some meta description
 Status: draft
+internal: #draft #python #django #sql #performance
 
 # NEED PROOF READING
 

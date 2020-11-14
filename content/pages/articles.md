@@ -2,6 +2,7 @@ Title: This is me, Jonathan
 status: published
 save_as: articles.html
 summary: Useful articles that you would be well-served to read.
+internal: #resources [[51.01 Resources]] #django #performance
 
 # Articles
 

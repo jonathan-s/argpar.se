@@ -6,7 +6,7 @@ Slug: improving-performance-by-10x
 Authors: Jonathan Sundqvist
 Metadescription: Some meta description
 Status: draft
-
+internal: #draft #performance #python #django
 
 
 

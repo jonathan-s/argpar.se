@@ -3,6 +3,7 @@ Date: 2015-06-07 20:00
 Category: tutorial
 Tags: blog, pelican, web development
 Authors: Jonathan Sundqvist
+internal: #blog #pelican #web-development #published
 MetaDescription: Create a website from scratch, this tutorial will tell you exactly what you will need. From software, hosting to your own domain.
 Summary: There are many options out there if you want to create your own website. But if you want customizability and still come away on the cheap the options shrink considerably. However if you create your website with something called a static site generator you'll be able to achieve exactly this. The only thing that you'll have to pay for in the end is the domain.
 

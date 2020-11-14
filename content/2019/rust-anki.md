@@ -7,6 +7,7 @@ Authors: Jonathan Sundqvist
 Metadescription: Rust has a steep learning curve, what if you could ease into the language. This deck of anki cards will help you with that. 
 Status: published
 image: images/rust-crab.svg
+internal: #rust #anki
 
 I've read [The Book][3] once before, but it was a long time ago, and at some point I read an o'reilly book about rust too. At the time of reading those books. It felt like the language made sense. I would remember what I read, surely. 
 
