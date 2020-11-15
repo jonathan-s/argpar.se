@@ -1,7 +1,7 @@
 Title: How to configure github actions for a python package
 date: 2020-11-14 20:00
-Category: open source
-Tags: CI, python
+Category: programming
+Tags: CI, python, open source, github
 Slug: configure-github-actions-for-python-package
 Authors: Jonathan Sundqvist
 Metadescription: A starting point on how to use github actions for python packages. Explains how to work with matrices and how that integrates with TOX.
