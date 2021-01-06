@@ -53,4 +53,21 @@ Further down I've set a TOX env to set exactly how I expect the tox environment 
 
 The python package [tox-gh-actions](https://github.com/ymyzk/tox-gh-actions) may help mapping the python versions with the tox versions. In this case I chose to do it directly with github actions to keep things simpler. One less dependency, one less worry so to speak.
 
+If you need a database to be able to run the tests you would need to include the following snippet. Include it so that it is a child of `build`. The snippet is specifically for postgres, but other databases obviously follow a similar pattern. 
+
+```yaml
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+```
+
+
 For the full documentation of all the things you can do with github actions there is the [official documentation](https://docs.github.com/en/free-pro-team@latest/actions).
