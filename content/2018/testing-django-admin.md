@@ -1,11 +1,11 @@
 Title: Testing Django admin
 date: 2018-07-08 14:10
 Category: programming
-Tags: python, django, programming, django-admin
+Tags: #python, #django, #programming, #django-admin
 Authors: Jonathan Sundqvist
 Metadescription: Get some handy tips for testing the django admin.
 Status: published
-internal: #published #python #django #django-admin
+internal: #published
 
 It's not exactly crystal clear how to test the functionalities that you add to django admin without diving into the source code of Django. So here are a few tips and snippets that'll help.
 

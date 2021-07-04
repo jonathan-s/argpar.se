@@ -1,12 +1,12 @@
 Title: Improving the performance by 10x
 date: 2015-05-17 16:00
 Category: programming
-Tags: django, python, performance
+Tags: #django, #python, #performance
 Slug: improving-performance-by-10x
 Authors: Jonathan Sundqvist
 Metadescription: Some meta description
 Status: draft
-internal: #draft #performance #python #django
+internal: #draft
 
 
 

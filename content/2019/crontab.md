@@ -1,12 +1,12 @@
 Title: Troubleshoot why crontab is not working
 date: 2019-05-09 16:00
 Category: programming
-Tags: crontab, devops, dokku
+Tags: #crontab, #devops, #dokku
 Slug: troubleshoot-why-crontab-is-not-working
 Authors: Jonathan Sundqvist
 Metadescription: Why is crontab not working?! What to look out for and how to quickly get crontab run smooth as butter and never skip a beat.
 Status: published
-internal: #published #crontab #devops #dokku
+internal: #published
 
 Crontab is a particularly finicky unix tool. It's not always the easiest to figure out why on earth your scheduled job is not running as it should.
 

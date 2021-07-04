@@ -1,12 +1,12 @@
 Title: Making a custom join in django or foregoing IN
 date: 2018-11-13 23:00
 Category: misc
-Tags: python, django, sql, performance
+Tags: #python, #django, #sql, #performance
 Slug: making-custom-join-django-foregoing-in
 Authors: Jonathan Sundqvist
 Metadescription: Some meta description
 Status: draft
-internal: #draft #python #django #sql #performance
+internal: #draft
 
 # NEED PROOF READING
 

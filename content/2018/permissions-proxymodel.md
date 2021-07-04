@@ -1,11 +1,11 @@
 Title: Permissions for Proxy models
 date: 2018-07-16 19:00
 Category: programming
-Tags: django, python, django-admin, programming
+Tags: #django, #python, #django-admin, #programming
 Authors: Jonathan Sundqvist
 Metadescription: Permissions are not added automatically for proxy models. You can solve this by adding permissions with this script.
 Status: published
-internal: #published #django #python #django-admin #programming
+internal: #published
 
 Proxy models are pretty useful if you want to create a new customized view in django admin. Let's say that you have a normal model and that you need a specific view where you can do bulk uploads. Creating a proxy model from your normal model and then using the django admin on top of your new proxy model gets you a clean separation of the regular list view and your custom django admin view.
 

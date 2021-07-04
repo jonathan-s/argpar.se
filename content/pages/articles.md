@@ -1,4 +1,4 @@
-Title: This is me, Jonathan
+Title: Useful articles
 status: published
 save_as: articles.html
 summary: Useful articles that you would be well-served to read.
@@ -15,7 +15,6 @@ Here I'm listing articles that I've especially well-written in topics that inter
 
 - [How to Create a Subscription SaaS Application with Django and Stripe](https://www.saaspegasus.com/guides/django-stripe-integrate/#a-team-based-saas-typically-b2b)
 - [Walkthrough on how to think about your infrastructure](https://mattsegal.dev/django-prod-architectures.html)
-
 
 
 ## Performance
