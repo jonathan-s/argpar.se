@@ -16,7 +16,7 @@ AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off
 
 PATH = 'content'
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['post_stats']
+PLUGINS = ['post_stats', 'obsidian']
 
 TIMEZONE = 'Europe/Berlin'
 
