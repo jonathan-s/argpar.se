@@ -1,5 +1,5 @@
-pelican[markdown]==4.5.0
+pelican[markdown]==4.9.0
 ghp-import
 beautifulsoup4
 pygments
-git+git://github.com/jonathan-s/pelican-obsidian@main#egg=pelican-obsidian
+git+https://github.com/jonathan-s/pelican-obsidian@main#egg=pelican-obsidian

@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 import json
 
+DEVELOPMENT = True
 
 AUTHOR = 'Jonathan Sundqvist'
 SITENAME = 'Argparse'

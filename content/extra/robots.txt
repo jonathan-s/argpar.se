@@ -3,3 +3,4 @@ Disallow: /drafts/
 Disallow: /tag/
 Disallow: /author/
 Disallow: /category/
+Disallow: /impressum/

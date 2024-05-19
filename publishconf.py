@@ -10,6 +10,8 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+DEVELOPMENT = False
+
 SITEURL = 'https://www.argpar.se'
 
 RELATIVE_URLS = False
@@ -26,4 +28,3 @@ DRAFT_SAVE_AS = ''
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "argparse"
-GOOGLE_ANALYTICS = "UA-9947703-3"
