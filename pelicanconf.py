@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+
 import json
 
 DEVELOPMENT = True
@@ -17,7 +18,11 @@ AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off
 
 PATH = 'content'
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['post_stats', 'obsidian']
+PLUGINS = [
+    'article_filter',
+    'post_stats',
+    'obsidian'
+]
 
 TIMEZONE = 'Europe/Berlin'
 
