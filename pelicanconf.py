@@ -69,7 +69,7 @@ EXTRA_PATH_METADATA = {
 # Pagination and stuff
 DEFAULT_LANG = 'en'
 DEFAULT_CATEGORY = 'misc'
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 18
 DEFAULT_ORPHANS = 1
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
