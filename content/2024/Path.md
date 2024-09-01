@@ -10,4 +10,3 @@ status: published
 internal: 
 image: images/Path-20240831112916345.webp
 ---
-![[Path-20240831112916345.webp]]
