@@ -18,7 +18,7 @@ https://github.com/pelican-plugins/feed-filter
 import logging
 from urllib.parse import urlparse
 
-from jinja2 import Markup
+from markupsafe import Markup
 from pelican import signals
 from pelican.utils import set_date_tzinfo
 from pelican.writers import Writer
