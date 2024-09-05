@@ -97,4 +97,6 @@ JINJA_FILTERS = {
     'jsonarray': jsonarray
 }
 TWITTER_USERNAME = '@argparse'
-EMAIL = 'jonathan@argpar.se'
+EMAIL = 'hello@co.argpar.se'
+
+USE_ANALYTICS = True
