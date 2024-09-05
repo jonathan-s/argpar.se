@@ -15,6 +15,7 @@ Possibly take inspiration from this.
 https://github.com/pelican-plugins/feed-filter
 """
 
+import logging
 from urllib.parse import urlparse
 
 from jinja2 import Markup
@@ -22,14 +23,16 @@ from pelican import signals
 from pelican.utils import set_date_tzinfo
 from pelican.writers import Writer
 
+logger = logging.getLogger(__name__)
+
 
 def load_template(generator):
     """Load 'feed' template and store its macros in CustomWriter."""
     try:
         tpl_macros = generator.get_template("feed").make_module(generator.context)
         CustomWriter.macros = tpl_macros
-    except Exception:
-        pass
+    except Exception as exc:
+        logger.exception(f"An error happened when dealing with template {exc}")
 
 
 class CustomWriter(Writer):
