@@ -49,7 +49,11 @@ class CustomWriter(Writer):
         link = '%s/%s' % (self.site_url, item.url)
         content = item.get_content(self.site_url)
 
-        description = self.macros.description(item) if hasattr(self.macros, 'description') else content
+        content = item.get_content(self.site_url)
+        description = item.summary
+        if description == content:
+            description = None
+
         feed.add_item(
             title=self.macros.title(item) if hasattr(self.macros, 'title') else title,
             link=self.macros.link(item).strip() if hasattr(self.macros, 'link') else link,
@@ -58,6 +62,7 @@ class CustomWriter(Writer):
                 item.date.date(),
                 urlparse(link).path.lstrip('/')
             ),
+            content=self.macros.description(item) if hasattr(self.macros, 'description') else content,
             description=description,
             categories=item.tags if hasattr(item, 'tags') else None,
             author_name=getattr(item, 'author', ''),
