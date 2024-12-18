@@ -5,7 +5,7 @@ category: misc
 tags: language, learning
 slug:
 authors: Jonathan Sundqvist
-metadescription:
+metadescription: My quest to master German vocabulary. Follow me on how I'm leveraging Anki to overcome years of procrastination.
 status: published
 unsplash: https://unsplash.com/photos/woman-sitting-on-bed-with-flying-books-yHG6llFLjS0
 internal:
