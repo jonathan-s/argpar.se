@@ -1,14 +1,15 @@
 ---
-title: "Efficient German Language Learning: Is Anki the answer?"
+title: Efficient German Language Learning: Is Anki the Answer?
 date: 2024-12-18 08:37
 category: misc
-tags: 
-slug: 
+tags: language, learning
+slug:
 authors: Jonathan Sundqvist
-metadescription: Some meta
-status: draft
-internal: 
-image: images/your_image.svg
+metadescription:
+status: published
+unsplash: https://unsplash.com/photos/woman-sitting-on-bed-with-flying-books-yHG6llFLjS0
+internal:
+image: images/learning-german-flying-books.webp
 ---
 It's confession time: after nearly eight years living in Germany, I still haven't learned the language. At this point it feels somewhat embarrassing and it's something I'd like to change.
 
