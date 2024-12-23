@@ -1,8 +1,10 @@
 ---
-title: Efficient German Language Learning: Is Anki the Answer?
+title: "Efficient German Language Learning: Is Anki the Answer?"
 date: 2024-12-18 08:37
 category: misc
-tags: language, learning
+tags:
+    - language
+    - learning
 slug:
 authors: Jonathan Sundqvist
 metadescription: My quest to master German vocabulary. Follow me on how I'm leveraging Anki to overcome years of procrastination.
