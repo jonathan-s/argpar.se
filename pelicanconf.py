@@ -6,25 +6,25 @@ import json
 
 DEVELOPMENT = True
 
-AUTHOR = 'Jonathan Sundqvist'
-SITENAME = 'Argparse'
-SITEURL = ''
-SLUGIFY_SOURCE = 'title'
-IGNORE_FILES = ['template.md']
-THEME = 'themes/simple-a'
+AUTHOR = "Jonathan Sundqvist"
+SITENAME = "Argparse"
+SITEURL = ""
+SLUGIFY_SOURCE = "title"
+IGNORE_FILES = ["template.md"]
+THEME = "themes/simple-a"
+THEME_STATIC_DIR = "static"
+TEMPLATE_PAGES = {
+    "cv-jonathan-sundqvist.html": "jonathan-sundqvist-full-stack-engineer.html"
+}
 WITH_FUTURE_DATES = False
-LOAD_CONTENT_CACHE = False        # if you are developing a theme turn these off.
-AUTORELOAD_IGNORE_CACHE = False   # if you are developing a theme turn these off.
+LOAD_CONTENT_CACHE = False  # if you are developing a theme turn these off.
+AUTORELOAD_IGNORE_CACHE = False  # if you are developing a theme turn these off.
 
-PATH = 'content'
-PLUGIN_PATHS = ['plugins']
-PLUGINS = [
-    'article_filter',
-    'post_stats',
-    'obsidian'
-]
+PATH = "content"
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["article_filter", "post_stats", "obsidian"]
 
-TIMEZONE = 'Europe/Berlin'
+TIMEZONE = "Europe/Berlin"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -35,46 +35,46 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # URL structure on site
-ARTICLE_URL = 'posts/{category}/{slug}'
-ARTICLE_SAVE_AS = 'posts/{category}/{slug}/index.html'
+ARTICLE_URL = "posts/{category}/{slug}"
+ARTICLE_SAVE_AS = "posts/{category}/{slug}/index.html"
 
-DRAFT_URL = 'drafts/{slug}'
-DRAFT_SAVE_AS = 'drafts/{slug}/index.html'
+DRAFT_URL = "drafts/{slug}"
+DRAFT_SAVE_AS = "drafts/{slug}/index.html"
 
-TAG_URL = 'tag/{slug}'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAG_URL = "tag/{slug}"
+TAG_SAVE_AS = "tag/{slug}/index.html"
 
 # authors won't be generated as it uses '' for save_as
-AUTHOR_URL = 'author/{slug}'
-AUTHOR_SAVE_AS = ''
+AUTHOR_URL = "author/{slug}"
+AUTHOR_SAVE_AS = ""
 
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORY_URL = "category/{slug}"
+CATEGORY_SAVE_AS = "category/{slug}/index.html"
 
-SITEMAP_SAVE_AS = 'sitemap.xml'
+SITEMAP_SAVE_AS = "sitemap.xml"
 STATIC_PATHS = [
-    'images',
-    'extra/robots.txt',
-    'extra/favicon.ico',
-    'extra/CNAME',
-    'extra/.gitignore'
+    "images",
+    "extra/robots.txt",
+    "extra/favicon.ico",
+    "extra/CNAME",
+    "extra/.gitignore",
 ]
 EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'},
-    'extra/CNAME': {'path': 'CNAME'},
-    'extra/.gitignore': {'path': '.gitignore'},
-    'content/pages/404.md': {'path': '404.html'}  # not sure this will work
+    "extra/robots.txt": {"path": "robots.txt"},
+    "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/CNAME": {"path": "CNAME"},
+    "extra/.gitignore": {"path": ".gitignore"},
+    "content/pages/404.md": {"path": "404.html"},  # not sure this will work
 }
 
 # Pagination and stuff
-DEFAULT_LANG = 'en'
-DEFAULT_CATEGORY = 'misc'
+DEFAULT_LANG = "en"
+DEFAULT_CATEGORY = "misc"
 DEFAULT_PAGINATION = 18
 DEFAULT_ORPHANS = 1
 PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+    (1, "{base_name}/", "{base_name}/index.html"),
+    (2, "{base_name}/page/{number}/", "{base_name}/page/{number}/index.html"),
 )
 
 DELETE_OUTPUT_DIRECTORY = True
@@ -85,7 +85,7 @@ RELATIVE_URLS = True
 # ########## THEME RELATED ############
 
 
-def datetimeformat(value, format='%H:%M / %d-%m-%Y'):
+def datetimeformat(value, format="%H:%M / %d-%m-%Y"):
     return value.strftime(format)
 
 
@@ -93,11 +93,8 @@ def jsonarray(value):
     return json.dumps([str(v) for v in value])
 
 
-JINJA_FILTERS = {
-    'datetimeformat': datetimeformat,
-    'jsonarray': jsonarray
-}
-TWITTER_USERNAME = '@argparse'
-EMAIL = 'hello@co.argpar.se'
+JINJA_FILTERS = {"datetimeformat": datetimeformat, "jsonarray": jsonarray}
+TWITTER_USERNAME = "@argparse"
+EMAIL = "hello@co.argpar.se"
 
 USE_ANALYTICS = True
