@@ -16,6 +16,35 @@
       }
     </style>
     <link rel="stylesheet" href="./static/css/landing.css">
+
+  <!--
+    Event snippet for Freelancer contact conversion page
+   -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1004397423"></script>
+  <script>
+    function gtag_report_conversion() {
+      var callback = function () { };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-1004397423/nwDJCOf8yosbEO_G994D',
+          'value': 1.0,
+          'currency': 'SEK',
+          'event_callback': callback
+      });
+      return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Your code here
+      let emailLinks = document.querySelectorAll(".email-link");
+      emailLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault()
+          window.location.href = event.currentTarget.getAttribute("href")
+          gtag_report_conversion()
+        })
+      })
+    });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -51,7 +80,7 @@
 
                   <div class="availability-notice">
                     <p>
-                      I'm currently available for at most 2 days per week. <a href="mailto:freelance@co.argpar.se">Get in touch!</a>
+                      I'm currently available for at most 2 days per week. <a class="email-link" href="mailto:freelance@co.argpar.se">Get in touch!</a>
                       <br>
                       Or sign up to be the first to hear when I have more availability.
                     </p>
@@ -449,7 +478,7 @@
 
                             <div class="flex">
                               <span class="icon-sm email"></span>
-                              <a href="mailto:contact@co.argpar.se">contact@co.argpar.se</a>
+                              <a class="email-link" href="mailto:contact@co.argpar.se">contact@co.argpar.se</a>
                             </div>
 
                             <div class="flex">
@@ -465,7 +494,6 @@
         </div>
     </footer>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1004397423"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
